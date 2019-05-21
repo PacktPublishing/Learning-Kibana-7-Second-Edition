@@ -7,7 +7,7 @@ Chapter02 No code
 
 Chapter03 contains the Logstash configuration files for reading CSV data, MongoDB and MySQL data. It also contain the CSV file for Popular Baby Names.
 
-Chapter04 No code
+Chapter04 contains the embedded html code for Kibana visualization and dashboard. You need to replace the embed code as per your Kibana setup.
 
 Chapter05 contains a text file to explain the grok pattern and how you can simulate it using grok debugger.
 
