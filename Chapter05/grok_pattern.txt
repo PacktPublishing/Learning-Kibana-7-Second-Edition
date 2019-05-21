@@ -1,0 +1,41 @@
+-------------------------------------------- Apache log -----------------------------------------------------------
+
+Log file example:
+127.0.0.1 GET /mytestpage.php 11314 0.011
+
+
+The grok pattern using which we can extract the above log:
+%{IP:client} %{WORD:method} %{URIPATHPARAM:request} %{NUMBER:bytes} %{NUMBER:duration}  
+
+
+So when we try to simulate this pattern against the sample data it gives us the following result:
+{
+      "duration": "0.011",
+      "request": "/mytestpage.php",
+      "method": "GET",
+      "bytes": "11314",
+      "client": "127.0.0.1"
+}
+
+
+-------------------------------------------- Catalina.out file log -----------------------------------------------------------
+
+Now take another little complex data which is Catalina logs from a Java application.
+
+2019-02-19 13:53:53.080 WARN 27408 --- [Executor-870113] o.s.web.client.AsyncRestTemplate : Async POST request for "https://ohionewstore.com" resulted in 401
+
+
+The grok pattern which we have written to match the above sample Catalina log entry:
+
+%{TIMESTAMP_ISO8601:timestamp}%{SPACE} %{LOGLEVEL:level} %{NOTSPACE:sessionid} --- %{NOTSPACE:thread} %{NOTSPACE:source} %{SPACE}: %{GREEDYDATA:message}
+
+
+After simulating the pattern against sample Catalina log entry we can get the following result:
+{
+  "level": "WARN",
+  "sessionid": "27408",
+  "thread": "[Executor-870113]",
+  "source": "o.s.web.client.AsyncRestTemplate",
+  "message": "Async POST request for \"https://ohionewstore.com\" resulted in 401",
+  "timestamp": "2019-02-19 13:53:53.080"
+}
