@@ -1,0 +1,62 @@
+-------------------------------------------------- APM Configuration--------------------------------------------------------
+
+
+Configure APM Agent for the Django application
+
+We will take an example of Python Django application for Blog creation and listing. In the next section, we will explain more about this blog application which is built in Python Django but first, we will cover how to configure the APM Agent with this application.  So now we are going to configure APM Agent with this application so that we can get the application performance data in Kibana. To configure Django for running APM agent for Python, we need to install the elastic-apm module:
+
+pip install elastic-apm
+
+Then we need to configure the agent and to configure APM with this Django application. We need to do the following changes in the settings.py file:
+
+# Add the agent to the installed apps
+INSTALLED_APPS = (
+  'elasticapm.contrib.django',
+  # ...
+)   
+
+ELASTIC_APM = {
+  # Set required service name. Allowed characters:
+  # a-z, A-Z, 0-9, -, _, and space
+  'SERVICE_NAME': 'django application', 
+
+  # Use if APM Server requires a token
+  'SECRET_TOKEN': 'mysecrettoken',
+
+  # Set custom APM Server URL (default: http://localhost:8200)
+  'SERVER_URL': 'http://localhost:8200',
+}
+
+
+Running the Django Application
+
+Now we will cover more about the blog application here and will check how we can run this application. You can get this Django blog application on the Github page for this book (https://github.com/PacktPublishing/Learning-Kibana-7-Second-Edition). First, we need to download this application from the Github page then move inside the main directory to execute the following commands:
+
+# make migrations
+python3 manage.py makemigrations
+
+# migrate the tables
+python3 manage.py migrate
+
+# run the server
+python3 manage.py runserver
+
+After successfully executing the above command we can run the server using below URL:
+
+http://127.0.0.1:8000/blogs
+
+We can access the swagger using the below link:
+
+http://127.0.0.1:8000/swagger/
+
+This application is very simple where user can add the blogs and can list them using API. 
+
+
+    
+# To send performance metrics, add our tracing middleware:
+MIDDLEWARE = (
+  'elasticapm.contrib.django.middleware.TracingMiddleware',
+  #...
+)
+
+Using the above changes in settings.py file, APM agent can be configured with Python Django application. After doing these changes in settings.py file we can start the application and can verify it from "Setup Instructions" page if everything is working as per the expectations.

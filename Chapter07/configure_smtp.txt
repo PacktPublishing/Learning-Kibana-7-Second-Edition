@@ -1,0 +1,14 @@
+-------------------------------------------- Configure Gmail SMTP -----------------------------------------------------------
+
+we can send an email to any email address but before setting it up, we need to add the SMTP credential in the elasticsearch.yml file. You can configure the Gmail SMTP accounts to send emails by adding the following configuration in the elasticsearch.yml file:
+
+xpack.notification.email.account: 
+  gmail_account: 
+    profile: gmail 
+    smtp: 
+      auth: true 
+      starttls.enable: true 
+      host: smtp.gmail.com 
+      port: 587 
+      user: a******@gmail.com   # put the email id using which you want to send the email.
+      password: w*****@****      # password of the gmail account.
