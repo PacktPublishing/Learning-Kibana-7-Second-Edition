@@ -56,7 +56,7 @@ We also provide a PDF file that has color images of the screenshots/diagrams use
 
 ## Get to Know the Authors
 **Anurag Srivastava**
-Anurag Srivastava is a senior technical lead in a multinational software company. He has
+is a senior technical lead in a multinational software company. He has
 more than 12 years' experience in web-based application development. He is proficient in
 designing architecture for scalable and highly available applications. He has handled dev
 teams and multiple clients from all over the globe over the past 10 years of his professional
@@ -66,7 +66,7 @@ relational databases. He has authored other two books—Mastering Kibana 6.x, an
 Quick Start Guide, both published by Packt.
 
 **Bahaaldine Azarmi**
-Bahaaldine Azarmi, or Baha for short, is the head of solutions architecture in the EMEA
+, or Baha for short, is the head of solutions architecture in the EMEA
 South region at Elastic. Prior to this position, Baha co-founded ReachFive, a marketing data
 platform focused on user behavior and social analytics. He has also worked for a number of
 different software vendors, including Talend and Oracle, where he held positions as a
