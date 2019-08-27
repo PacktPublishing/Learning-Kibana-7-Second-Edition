@@ -66,7 +66,7 @@ relational databases. He has authored other two books—Mastering Kibana 6.x, an
 Quick Start Guide, both published by Packt.
 
 **Bahaaldine Azarmi**
-, or Baha for short, is the head of solutions architecture in the EMEA
+or Baha for short, is the head of solutions architecture in the EMEA
 South region at Elastic. Prior to this position, Baha co-founded ReachFive, a marketing data
 platform focused on user behavior and social analytics. He has also worked for a number of
 different software vendors, including Talend and Oracle, where he held positions as a
